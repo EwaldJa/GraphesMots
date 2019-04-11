@@ -1,6 +1,7 @@
 import java.io.Serializable;
 
 public class Mots implements Serializable {
+    private static final long serialVersionUID = 1L;
     public String value;
     public int lenght;
 
@@ -21,5 +22,9 @@ public class Mots implements Serializable {
 
     public boolean isSameas(Mots mot) {
         return (value.equals(mot.value));
+    }
+
+    public String toString() {
+        return value;
     }
 }

@@ -2,6 +2,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Graphe implements Serializable {
+    private static final long serialVersionUID = 1L;
     public ArrayList<Mots> mes_noeuds;
     public ArrayList<Aretes> mes_aretes;
 
