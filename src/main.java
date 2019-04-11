@@ -10,7 +10,13 @@ public class main {
         ArrayList<Mots> motslus = new ArrayList<Mots>();
         String mot_string = ""; //Pour stocker la ligne lue
         BufferedReader br = null;
-        File savescore = new File("../mots/mots" + nb_lettres + "lettres.txt");
+        File savescore;
+        if(nb_lettres<10) {
+            savescore = new File("mots/mots0" + nb_lettres + "lettres.txt");
+        }else{
+            savescore = new File("mots/mots" + nb_lettres + "lettres.txt");
+
+        }
         try {
             br = new BufferedReader(new FileReader(savescore));
         } catch (Exception e) {
@@ -34,7 +40,7 @@ public class main {
     }
 
     public static void main (String[] args) {
-        File savescore = new File("savescore.txt");
-        //ArrayList<Mots> mots4lettres = lire(4);
+        //File savescore = new File("savescore.txt");
+        ArrayList<Mots> mots4lettres = lire(4);
     }
 }
