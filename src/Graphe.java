@@ -10,14 +10,6 @@ public class Graphe implements Serializable {
         mes_aretes = aretes;
     }
 
-    public ArrayList<Mots> getNoeuds() {
-        return mes_noeuds;
-    }
-
-    public ArrayList<Aretes> getAretes() {
-        return mes_aretes;
-    }
-
     public ArrayList<Aretes> getAretesMots(Mots un_mot) {
         ArrayList<Aretes> res = new ArrayList<Aretes>();
         for (int i = 0; i < mes_aretes.size(); i++) {
