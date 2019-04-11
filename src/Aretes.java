@@ -1,4 +1,6 @@
-public class Aretes {
+import java.io.Serializable;
+
+public class Aretes implements Serializable {
     public Mots noeud1;
     public Mots noeud2;
 

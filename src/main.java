@@ -54,7 +54,7 @@ public class main {
 
     public static void sauvegarder(ArrayList<Mots> graphe, int nb_lettres) {
         //Fichier de sauvegarde
-        File save = new File("save" + nb_lettres + ".obj");
+        File save = new File("saveGraphes/save" + nb_lettres + ".obj");
             try {
                 save.createNewFile(); //Au cas où le fichier n'existe pas déjà (qu'il ait été supprimé)
                 //Sérialization du modèle
@@ -70,7 +70,7 @@ public class main {
         //Variable qui servira de retour
         ArrayList<Mots> graphe = null;
         //Fichier de sauvegarde
-        File save = new File("save" + nb_lettres + ".obj");
+        File save = new File("saveGraphes/save" + nb_lettres + ".obj");
         //Si la taille est supérieure à 0, cela signifie qu'il y a une sauvegarde
         if (save.length() > 0) {
             try {
@@ -88,6 +88,7 @@ public class main {
 
 
     public static void main (String[] args) {
+        /*
         ArrayList<Mots> mots4lettres = lire(4);
         ArrayList<Mots> mots5lettres = lire(5);
         ArrayList<Mots> mots6lettres = lire(6);
@@ -103,7 +104,10 @@ public class main {
         ArrayList<Mots> mots16lettres = lire(16);
         ArrayList<Mots> mots17lettres = lire(17);
         ArrayList<Mots> mots18lettres = lire(18);
-
+        */
+        for (int i = 4; i <= 18; i++) {
+            sauvegarder(lire(i), i);
+        }
 
     }
 }

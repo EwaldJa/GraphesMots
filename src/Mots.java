@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.io.Serializable;
 
-public class Mots implements Serializable{
+public class Mots implements Serializable {
     public String value;
     public int lenght;
 
