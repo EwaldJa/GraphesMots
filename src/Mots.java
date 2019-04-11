@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Mots {
     public String value;
     public int lenght;
-    public ArrayList<Mots> voisins;
+    public ArrayList<Mots> voisins = new ArrayList<>();
 
     public Mots(String value,int lenght) {
         this.value = value;
