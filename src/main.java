@@ -45,20 +45,22 @@ public class main {
     }
 
     public static void main (String[] args) {
-        ArrayList<Mots> mots04lettres = lire(4);
-        ArrayList<Mots> mots05lettres = lire(5);
-        ArrayList<Mots> mots06lettres = lire(6);
-        ArrayList<Mots> mots07lettres = lire(7);
-        ArrayList<Mots> mots08lettres = lire(8);
-        ArrayList<Mots> mots09lettres = lire(9);
-        ArrayList<Mots> mots10lettres = lire(10);
-        ArrayList<Mots> mots11lettres = lire(11);
-        ArrayList<Mots> mots12lettres = lire(12);
-        ArrayList<Mots> mots13lettres = lire(13);
-        ArrayList<Mots> mots14lettres = lire(14);
-        ArrayList<Mots> mots15lettres = lire(15);
-        ArrayList<Mots> mots16lettres = lire(16);
-        ArrayList<Mots> mots17lettres = lire(17);
-        ArrayList<Mots> mots18lettres = lire(18);
+        lire(4);
+        lire(5);
+        lire(6);
+        lire(7);
+        lire(8);
+        lire(9);
+        lire(10);
+        lire(11);
+        lire(12);
+        lire(13);
+        lire(14);
+        lire(15);
+        lire(16);
+        lire(17);
+        lire(18);
+
+
     }
 }
