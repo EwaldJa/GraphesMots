@@ -3,6 +3,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.io.ObjectOutputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.FileInputStream;
 
 public class main {
 
@@ -48,10 +52,45 @@ public class main {
         return motslus; //on renvoie le mot
     }
 
+    public static void sauvegarder(ArrayList<Mots> graphe, int nb_lettres) {
+        //Fichier de sauvegarde
+        File save = new File("save" + nb_lettres + ".obj");
+            try {
+                save.createNewFile(); //Au cas où le fichier n'existe pas déjà (qu'il ait été supprimé)
+                //Sérialization du modèle
+                ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(save));
+                oos.writeObject(graphe);
+                oos.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
+
+    public static ArrayList<Mots> demarrer(int nb_lettres) {
+        //Variable qui servira de retour
+        ArrayList<Mots> graphe = null;
+        //Fichier de sauvegarde
+        File save = new File("save" + nb_lettres + ".obj");
+        //Si la taille est supérieure à 0, cela signifie qu'il y a une sauvegarde
+        if (save.length() > 0) {
+            try {
+                //Lecture et instanciation de la sauvegarde
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(save));
+                graphe = (ArrayList<Mots>) ois.readObject();
+                ois.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return graphe;
+    }
+
+
+
     public static void main (String[] args) {
-        lire(4);
-        lire(5);
-        lire(6);
+        //lire(4);
+        //lire(5);
+        //lire(6);
         lire(7);
         lire(8);
         lire(9);
