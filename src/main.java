@@ -88,35 +88,21 @@ public class main {
 
 
     public static void main (String[] args) {
-        /*
-        ArrayList<Mots> mots4lettres = lire(4);
-        ArrayList<Mots> mots5lettres = lire(5);
-        ArrayList<Mots> mots6lettres = lire(6);
-        ArrayList<Mots> mots7lettres = lire(7);
-        ArrayList<Mots> mots8lettres = lire(8);
-        ArrayList<Mots> mots9lettres = lire(9);
-        ArrayList<Mots> mots10lettres = lire(10);
-        ArrayList<Mots> mots11lettres = lire(11);
-        ArrayList<Mots> mots12lettres = lire(12);
-        ArrayList<Mots> mots13lettres = lire(13);
-        ArrayList<Mots> mots14lettres = lire(14);
-        ArrayList<Mots> mots15lettres = lire(15);
-        ArrayList<Mots> mots16lettres = lire(16);
-        ArrayList<Mots> mots17lettres = lire(17);
-        ArrayList<Mots> mots18lettres = lire(18);
-        */
-
-        /*
-        for (int i = 4; i <= 18; i++) {
-            sauvegarder(lire(i), i);
+        Graphe motDeNLettres;
+        for (int n =4;n<19;n++) {
+            System.out.println("\n\nnombre de lettres : "+n);
+            motDeNLettres = recuperer(n);
+            System.out.println("Nombre de sommet : "+motDeNLettres.mes_noeuds.size()+
+                    "   Nombre d'aretes : "+motDeNLettres.mes_aretes.size());
+            System.out.println("NbMotsSansVoisins " + motDeNLettres.getNbMotsSansVoisins());
+            motDeNLettres.nbComposante();
+            motDeNLettres.getNbComposanteDeDeux();
+            int max = motDeNLettres.getDegreMax();
+            for (int i = 0; i <= max; i++) {
+                motDeNLettres.getNbSommetKVoisin(i);
+            }
         }
-        */
 
-
-        Graphe mots4lettres = recuperer(4);
-
-        System.out.println(mots4lettres.getAretesMots(mots4lettres.mes_noeuds.get(1)));
-        System.out.println(mots4lettres.getNbMotsSansVoisins());
 
     }
 }
