@@ -45,7 +45,20 @@ public class main {
     }
 
     public static void main (String[] args) {
-        //File savescore = new File("savescore.txt");
-        ArrayList<Mots> mots4lettres = lire(4);
+        ArrayList<Mots> mots04lettres = lire(4);
+        ArrayList<Mots> mots05lettres = lire(5);
+        ArrayList<Mots> mots06lettres = lire(6);
+        ArrayList<Mots> mots07lettres = lire(7);
+        ArrayList<Mots> mots08lettres = lire(8);
+        ArrayList<Mots> mots09lettres = lire(9);
+        ArrayList<Mots> mots10lettres = lire(10);
+        ArrayList<Mots> mots11lettres = lire(11);
+        ArrayList<Mots> mots12lettres = lire(12);
+        ArrayList<Mots> mots13lettres = lire(13);
+        ArrayList<Mots> mots14lettres = lire(14);
+        ArrayList<Mots> mots15lettres = lire(15);
+        ArrayList<Mots> mots16lettres = lire(16);
+        ArrayList<Mots> mots17lettres = lire(17);
+        ArrayList<Mots> mots18lettres = lire(18);
     }
 }
