@@ -11,6 +11,7 @@ public class main {
         String mot_string = ""; //Pour stocker la ligne lue
         BufferedReader br = null;
         File savescore;
+        int nbSommet=0,nbArete=0;
         if(nb_lettres<10) {
             savescore = new File("mots/mots0" + nb_lettres + "lettres.txt");
         }else{
@@ -24,14 +25,12 @@ public class main {
         }
         try {
             mot_string = br.readLine(); //On lit la ligne dans le fichier
-            if (mot_string != null) {
-                motslus.add(new Mots(mot_string, nb_lettres));
-                mot_string = br.readLine();
-            }
             while (mot_string != null){
+                nbSommet+=1;
                 Mots nouvMot = new Mots(mot_string, nb_lettres);
                 for (int i = 0; i < motslus.size(); i++) {
-                    nouvMot.addVoisin(motslus.get(i));
+                    if(nouvMot.addVoisin(motslus.get(i)))
+                        nbArete+=1;
                 }
                 motslus.add(nouvMot);
                 mot_string = br.readLine();
@@ -40,6 +39,8 @@ public class main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("nbLettre : "+nb_lettres);
+        System.out.println("nbSommets : "+nbSommet+"   nbAretes :"+nbArete+"\n");
         return motslus; //on renvoie le mot
     }
 
