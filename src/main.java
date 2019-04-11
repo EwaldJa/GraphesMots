@@ -66,7 +66,7 @@ public class main {
             }
     }
 
-    public static ArrayList<Mots> demarrer(int nb_lettres) {
+    public static ArrayList<Mots> recuperer(int nb_lettres) {
         //Variable qui servira de retour
         ArrayList<Mots> graphe = null;
         //Fichier de sauvegarde
@@ -88,21 +88,21 @@ public class main {
 
 
     public static void main (String[] args) {
-        //lire(4);
-        //lire(5);
-        //lire(6);
-        lire(7);
-        lire(8);
-        lire(9);
-        lire(10);
-        lire(11);
-        lire(12);
-        lire(13);
-        lire(14);
-        lire(15);
-        lire(16);
-        lire(17);
-        lire(18);
+        ArrayList<Mots> mots4lettres = lire(4);
+        ArrayList<Mots> mots5lettres = lire(5);
+        ArrayList<Mots> mots6lettres = lire(6);
+        ArrayList<Mots> mots7lettres = lire(7);
+        ArrayList<Mots> mots8lettres = lire(8);
+        ArrayList<Mots> mots9lettres = lire(9);
+        ArrayList<Mots> mots10lettres = lire(10);
+        ArrayList<Mots> mots11lettres = lire(11);
+        ArrayList<Mots> mots12lettres = lire(12);
+        ArrayList<Mots> mots13lettres = lire(13);
+        ArrayList<Mots> mots14lettres = lire(14);
+        ArrayList<Mots> mots15lettres = lire(15);
+        ArrayList<Mots> mots16lettres = lire(16);
+        ArrayList<Mots> mots17lettres = lire(17);
+        ArrayList<Mots> mots18lettres = lire(18);
 
 
     }
