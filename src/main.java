@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class main {
 
-    public String lire(int nb_lettres) {
+    public static ArrayList<Mots> lire(int nb_lettres) {
         ArrayList<Mots> motslus = new ArrayList<Mots>();
         String mot_string = ""; //Pour stocker la ligne lue
         BufferedReader br = null;
-        File savescore = new File("mots" + nb_lettres + "lettres.txt");
+        File savescore = new File("../mots/mots" + nb_lettres + "lettres.txt");
         try {
             br = new BufferedReader(new FileReader(savescore));
         } catch (Exception e) {
@@ -23,15 +23,18 @@ public class main {
                 for (int i = 0; i < motslus.size(); i++) {
                     nouvMot.addVoisin(motslus.get(i));
                 }
+                motslus.add(nouvMot);
+                mot_string = br.readLine();
             }
             br.close(); //fermeture du flux
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return mot_string; //on renvoie le mot
+        return motslus; //on renvoie le mot
     }
 
     public static void main (String[] args) {
-
+        File savescore = new File("savescore.txt");
+        //ArrayList<Mots> mots4lettres = lire(4);
     }
 }
