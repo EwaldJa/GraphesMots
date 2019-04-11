@@ -8,6 +8,7 @@ public class main {
 
     public static ArrayList<Mots> lire(int nb_lettres) {
         ArrayList<Mots> motslus = new ArrayList<Mots>();
+        ArrayList<Aretes> aretes=new ArrayList<Aretes>();;
         String mot_string = ""; //Pour stocker la ligne lue
         BufferedReader br = null;
         File savescore;
@@ -29,8 +30,11 @@ public class main {
                 nbSommet+=1;
                 Mots nouvMot = new Mots(mot_string, nb_lettres);
                 for (int i = 0; i < motslus.size(); i++) {
-                    if(nouvMot.addVoisin(motslus.get(i)))
+                    if(nouvMot.isVoisin(motslus.get(i))){
+                        aretes.add(new Aretes(nouvMot,motslus.get(i)));
                         nbArete+=1;
+                    }
+
                 }
                 motslus.add(nouvMot);
                 mot_string = br.readLine();
