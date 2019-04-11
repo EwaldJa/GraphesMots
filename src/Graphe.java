@@ -22,4 +22,14 @@ public class Graphe implements Serializable {
         return res;
     }
 
+    public int getNbMotsSansVoisins() {
+        int res = 0;
+        for (int i = 0; i < mes_noeuds.size(); i++) {
+            if (getAretesMots(mes_noeuds.get(i)).size() == 0) {
+                res++;
+            }
+        }
+        return res;
+    }
+
 }

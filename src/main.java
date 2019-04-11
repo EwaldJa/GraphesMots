@@ -116,6 +116,7 @@ public class main {
         Graphe mots4lettres = recuperer(4);
 
         System.out.println(mots4lettres.getAretesMots(mots4lettres.mes_noeuds.get(1)));
+        System.out.println(mots4lettres.getNbMotsSansVoisins());
 
     }
 }
