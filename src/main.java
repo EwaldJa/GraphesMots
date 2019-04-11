@@ -105,9 +105,18 @@ public class main {
         ArrayList<Mots> mots17lettres = lire(17);
         ArrayList<Mots> mots18lettres = lire(18);
         */
+
+        /*
         for (int i = 4; i <= 18; i++) {
             sauvegarder(lire(i), i);
         }
+        */
+
+
+        Graphe mots4lettres = recuperer(4);
+
+        System.out.println(mots4lettres.getAretesMots(mots4lettres.mes_noeuds.get(1)));
+        System.out.println(mots4lettres.getNbMotsSansVoisins());
 
     }
 }
