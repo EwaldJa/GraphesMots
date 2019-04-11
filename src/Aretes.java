@@ -8,4 +8,5 @@ public class Aretes implements Serializable {
         this.noeud1 = noeud1;
         this.noeud2 = noeud2;
     }
+
 }

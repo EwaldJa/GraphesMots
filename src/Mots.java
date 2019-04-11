@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.io.Serializable;
 
 public class Mots implements Serializable {
@@ -18,5 +17,9 @@ public class Mots implements Serializable {
             i = i + 1;
         }
         return difference <= 1;
+    }
+
+    public boolean isSameas(Mots mot) {
+        return (value.equals(mot.value));
     }
 }

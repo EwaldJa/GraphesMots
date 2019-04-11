@@ -10,7 +10,7 @@ import java.io.FileInputStream;
 
 public class main {
 
-    public static ArrayList<Mots> lire(int nb_lettres) {
+    public static Graphe lire(int nb_lettres) {
         ArrayList<Mots> motslus = new ArrayList<Mots>();
         ArrayList<Aretes> aretes=new ArrayList<Aretes>();;
         String mot_string = ""; //Pour stocker la ligne lue
@@ -49,10 +49,10 @@ public class main {
         }
         System.out.println("nbLettre : "+nb_lettres);
         System.out.println("nbSommets : "+nbSommet+"   nbAretes :"+nbArete+"\n");
-        return motslus; //on renvoie le mot
+        return new Graphe(motslus, aretes); //on renvoie le mot
     }
 
-    public static void sauvegarder(ArrayList<Mots> graphe, int nb_lettres) {
+    public static void sauvegarder(Graphe graphe, int nb_lettres) {
         //Fichier de sauvegarde
         File save = new File("saveGraphes/save" + nb_lettres + ".obj");
             try {
@@ -66,9 +66,9 @@ public class main {
             }
     }
 
-    public static ArrayList<Mots> recuperer(int nb_lettres) {
+    public static Graphe recuperer(int nb_lettres) {
         //Variable qui servira de retour
-        ArrayList<Mots> graphe = null;
+        Graphe graphe = null;
         //Fichier de sauvegarde
         File save = new File("saveGraphes/save" + nb_lettres + ".obj");
         //Si la taille est supérieure à 0, cela signifie qu'il y a une sauvegarde
@@ -76,7 +76,7 @@ public class main {
             try {
                 //Lecture et instanciation de la sauvegarde
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(save));
-                graphe = (ArrayList<Mots>) ois.readObject();
+                graphe = (Graphe) ois.readObject();
                 ois.close();
             } catch (Exception e) {
                 e.printStackTrace();
