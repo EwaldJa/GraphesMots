@@ -24,6 +24,10 @@ public class main {
         }
         try {
             mot_string = br.readLine(); //On lit la ligne dans le fichier
+            if (mot_string != null) {
+                motslus.add(new Mots(mot_string, nb_lettres));
+                mot_string = br.readLine();
+            }
             while (mot_string != null){
                 Mots nouvMot = new Mots(mot_string, nb_lettres);
                 for (int i = 0; i < motslus.size(); i++) {
